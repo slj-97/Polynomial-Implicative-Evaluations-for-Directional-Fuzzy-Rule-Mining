@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "directional-fuzzy-rule-mining-experiments"
+version = "0.1.0"
+description = "Reproducible experiments for polynomial implicative directional fuzzy rule mining"
+readme = "experiments/README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "PyYAML>=6.0",
+    "scipy>=1.11",
+    "matplotlib>=3.8",
+    "pyarrow>=14.0",
+    "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+firm = ["pyFTS"]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+theory = ["sympy>=1.12"]
+
+[tool.pytest.ini_options]
+testpaths = ["experiments/tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.setuptools.packages.find]
+include = ["experiments*"]

@@ -1,0 +1,12 @@
+inherits: common.yaml
+replications: 50
+label_counts: [3, 5]
+phi: 0.7
+rho: 0.5
+lags: [1, 3, 5]
+lambda: [0.25, 0.5, 1.0]
+noise: [0.1, 0.25, 0.5]
+functions: [linear, tanh, saturation]
+length: 3000
+burn_in: 500
+include_independent_null: true

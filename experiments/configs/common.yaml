@@ -1,0 +1,18 @@
+seed: 20260903
+float_tolerance: 1.0e-12
+protocol: our_main
+tnorm: lukasiewicz
+thresholds:
+  coverage: 0.01
+  support: [0.01, 0.025, 0.05]
+  confidence: [0.3, 0.5, 0.7]
+polynomial_grid:
+  sigma: [0.25, 0.5, 0.75, 1.0]
+  relative_delta: [-1.0, -0.5, 0.0, 0.5, 1.0]
+outputs:
+  raw_results: experiments/outputs/raw_results
+  summaries: experiments/outputs/summaries
+  figures: experiments/outputs/figures
+  tables: experiments/outputs/tables
+  logs: experiments/outputs/logs
+  paper: experiments/outputs/paper

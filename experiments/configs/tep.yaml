@@ -1,0 +1,8 @@
+dataset: tep
+protocol: our_main
+normal_only: true
+lags: [1, 2, 5, 10]
+training_path: null
+test_path: null
+normal_test_split: [0.5, 0.5]
+pair_registry: experiments/configs/real_process_pairs.csv

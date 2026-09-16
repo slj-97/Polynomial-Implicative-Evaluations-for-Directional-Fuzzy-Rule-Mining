@@ -1,0 +1,14 @@
+# Frozen before the first tabular result run; descriptive fixed-split analysis.
+datasets: [iris, wdbc, vehicle, abalone, magic, online_news]
+seed: 20260903
+training_fraction: 0.7
+label_counts: [3, 5]
+targets:
+  iris: Class
+  wdbc: Class
+  vehicle: Class
+  abalone: Rings
+  magic: Class
+  online_news: shares
+# Numerical predictors only; all unordered distinct-variable label pairs.
+# No tuning, row subsampling, temporal lags or inferential tests.

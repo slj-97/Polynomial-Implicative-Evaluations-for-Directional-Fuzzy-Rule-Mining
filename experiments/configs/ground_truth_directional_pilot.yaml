@@ -1,0 +1,24 @@
+inherits: common.yaml
+purpose: exploratory_ground_truth_directional_ranking
+replications: 50
+phi: 0.7
+rho: 0.5
+lags: [1, 3]
+coupling: 1.0
+response_noise_to_signal: [0.25, 0.5, 1.0, 2.0]
+mechanisms: [tanh, saturation, linear]
+length: 3000
+burn_in: 500
+label_count: 3
+primary_label: high
+sigma: 1.0
+deltas: [-1.0, -0.5, 0.0, 0.5, 1.0]
+include_independent_null: true
+tie_tolerance: 1.0e-12
+bootstrap_repetitions: 2000
+decision_rule:
+  minimum_overall_accuracy_gain: 0.05
+  require_positive_gain_in_each_nonlinear_mechanism: true
+  maximum_null_deviation_from_chance: 0.05
+  holm_alpha: 0.05
+

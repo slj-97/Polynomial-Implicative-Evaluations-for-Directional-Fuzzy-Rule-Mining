@@ -1,0 +1,12 @@
+inherits: common.yaml
+replications: 50
+kappa: [1.25, 2.0, 4.0]
+eta: [0.0, 0.02, 0.05, 0.10]
+n_records: [500, 2000, 10000]
+controls: [diagonal, exchangeable]
+evaluations:
+  - product
+  - minimum
+  - {power: 0.01}
+  - {power: 2.0}
+  - proposed_grid

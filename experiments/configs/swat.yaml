@@ -1,0 +1,7 @@
+dataset: swat
+protocol: our_main
+normal_only: true
+chronological_split: [0.6, 0.2, 0.2]
+lags: [1, 5, 10, 30, 60]
+data_path: null
+pair_registry: experiments/configs/real_process_pairs.csv

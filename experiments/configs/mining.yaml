@@ -1,0 +1,6 @@
+max_antecedent_sizes: [2, 3, 4]
+pruning_modes: [exhaustive, coverage_only, coverage_support]
+thresholds:
+  coverage: 0.01
+  support: 0.025
+  confidence: 0.5
