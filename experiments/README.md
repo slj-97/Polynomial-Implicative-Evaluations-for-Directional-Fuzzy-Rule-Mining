@@ -8,11 +8,9 @@ This directory contains the independent experimental implementation for
 The read-only reference checkout is `../external/FIRM-paper/`:
 
 - Repository: https://github.com/rferper/FIRM-paper
-- Pinned commit: `51706e395ae8902d826475ae7f230fe5bfd39af0`
 - Paper: Fernandez-Peralta, ``Fuzzy Implicative Rules: A Unified Approach,''
   *IEEE Transactions on Fuzzy Systems*, 2026.
-- Licence status: no explicit licence was found in the audited checkout; see
-  `outputs/logs/firm_license_audit.md`.
+
 
 No FIRM source file is copied or modified. `src/firm_adapter.py` may import the
 local reference checkout for smoke tests and controlled comparisons only.
