@@ -1,11 +1,7 @@
 # Reproducible Experiment Framework
 
-For the current revised manuscript, start with [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
-It gives the exact coefficient-test commands, pinned data reconstruction,
-current table-to-script map and dependency versions. It separates table
-reconstruction from saved results (Route 1) from experiment reruns using the
-specified inputs and configurations (Route 2). Script `25_reproduce_tables.py`
-regenerates and verifies all 24 empirical table bodies from saved results.
+See the [reproducibility guide](../REPRODUCIBILITY.md) for setup and commands
+to rebuild the tables or rerun the experiments.
 
 This directory contains the independent experimental implementation for
 *Polynomial Implicative Evaluations for Directional Fuzzy Rule Mining*.
@@ -109,7 +105,7 @@ The current timing tables use the complete interleaved follow-up collected by
 `33_computational_followup.py --batch controlled`; the original measurements above
 remain available for verification. The three-repeat diagnostic is generated
 with `--batch pilot`; a separate `--batch controlled_pilot` checks fixed affinity
-to logical processor 0, used by the reported measurements. See `REPRODUCIBILITY.md` for the current table inputs,
+to logical processor 0, used by the reported measurements. See the [reproducibility guide](../REPRODUCIBILITY.md) for the table inputs,
 fresh-measurement commands and separate saved-result reconstruction route.
 `34_choice_gap_audit.py` checks sign ties and fixed-parameter gap variation
 using the saved inner evaluations and 120 repeated-split pair-score files.
