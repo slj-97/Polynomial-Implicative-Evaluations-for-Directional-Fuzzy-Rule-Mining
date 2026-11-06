@@ -1,4 +1,4 @@
-"""Validate the revised protocol and export fuzzification-sensitivity evidence."""
+"""Check the synthetic runs and summarize results by label count."""
 
 from __future__ import annotations
 

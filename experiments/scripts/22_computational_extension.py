@@ -1,4 +1,4 @@
-"""Q5 computational extension: isolated sequential workers, frozen search code."""
+"""Run the computational extension with a separate process for each search."""
 from __future__ import annotations
 
 import argparse

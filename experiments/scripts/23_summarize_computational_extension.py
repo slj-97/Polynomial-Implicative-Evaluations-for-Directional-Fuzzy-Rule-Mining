@@ -1,4 +1,4 @@
-"""Verified descriptive tables and figures for the completed Q5 benchmark."""
+"""Summarize the computational extension and check retained-rule agreement."""
 from __future__ import annotations
 
 import json
@@ -103,13 +103,13 @@ def main() -> None:
     display=summary[["variables","support_threshold"]+[m+"_"+q for q in ["scored","elapsed_seconds","peak_mib"] for m in MODES]].copy()
     for col in display.columns:
         if col not in ["variables","support_threshold"]: display[col]=display[col].map(lambda v:f"{v:.4f}")
-    report="# Reviewer 1 Q5 computational extension\n\n"
+    report="# Computational extension\n\n"
     report+="100 paired seed/configuration comparisons, 300 sequential isolated searches. Ten fixed seeds; scale 5/8/10 variables at K=4; sigma=.75, delta=.375; support thresholds .01/.05. The 8-variable parameter analysis also uses delta=-.375 and0, reusing the measured positive setting.\n\n"
     report+=markdown(display)+"\n\n"
     report+="## Validation and measurement\n\nAll 100 comparisons have exactly equal retained key sets across the three search modes. Exhaustive counts match the combinatorial formula. All 60 new five-variable seed/mode/threshold rows reproduce historical generated/scored/retained counts. Search source unchanged. CPU: "+cpu+". Timing covers mine_rules and result sorting, excludes startup/preprocessing and serialization. Memory is the OS lifetime peak through return from search; pre-search RSS and peak are recorded. It includes process/import/preprocessing overhead, so it is not a search-only allocation peak. Modes run sequentially in fresh workers, with cyclic ordering and one BLAS thread.\n\n"
-    report+="## Claim candidates\n\nCandidate reductions and paired elapsed-time ratios quantify this implementation on controlled membership data. Any speedup claim must give its measured settings and retained-set equality. Whole-worker memory measurements may be similar despite fewer candidates because input, interpreter and retained output remain resident. The experiment does not establish real-data scaling or a smaller combinatorial worst case. Sources: measurements.csv, summary.csv, validation.json.\n"
+    report+="## Reading the measurements\n\nCandidate reductions and paired elapsed-time ratios describe these runs on controlled membership data. Whole-worker memory includes the interpreter, input, and retained output. See measurements.csv, summary.csv, and validation.json.\n"
     (OUT/"analysis-report.md").write_text(report,encoding="utf-8")
-    (OUT/"stats-appendix.md").write_text("""# Q5 descriptive statistics
+    (OUT/"stats-appendix.md").write_text("""# Descriptive statistics for the computational extension
 
 Ten fixed seeds per configuration. Medians and 25th/75th empirical percentiles
 use linear interpolation. Time ratios are computed per paired seed, then

@@ -1,4 +1,4 @@
-"""Reviewer 2 Q8: record/label/length axes and real data in isolated workers.
+"""Benchmark record count, label count, and rule length in separate workers.
 
 Ordinary wall times use the unchanged miner. A separate diagnostic pass adds
 phase timers and must reproduce every count and retained key of that miner.

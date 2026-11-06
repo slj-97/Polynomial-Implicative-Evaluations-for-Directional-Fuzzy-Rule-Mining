@@ -1,5 +1,5 @@
-"""Reviewer 2: exact examples, matched affine operators, nested validation,
-and whole-trajectory variability. Writes new results; original results intact.
+"""Compute exact examples, matched affine comparisons, nested parameter
+selection, and variation across complete trajectories.
 """
 from __future__ import annotations
 import argparse

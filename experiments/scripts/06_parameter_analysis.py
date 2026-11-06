@@ -1,4 +1,4 @@
-"""Summarise completed synthetic or real runs; never invent missing cells."""
+"""Summarise parameter effects from completed synthetic or real-data runs."""
 from __future__ import annotations
 import pandas as pd
 from _common import ROOT

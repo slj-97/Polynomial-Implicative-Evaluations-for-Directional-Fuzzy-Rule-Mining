@@ -1,4 +1,4 @@
-"""Build Reviewer 2 table bodies directly from measured results."""
+"""Build table bodies for the affine, selection, temporal, and computational analyses."""
 from __future__ import annotations
 import csv
 import json
@@ -102,6 +102,6 @@ def main() -> None:
         with (target/(label+'.csv')).open('w',encoding='utf-8',newline='') as f:csv.writer(f).writerows(data)
         (target/(label+'.tex')).write_text(snippets[label]+'\n',encoding='utf-8')
     (target/'rows.json').write_text(json.dumps(rows,indent=2),encoding='utf-8')
-    print(f'Built {len(rows)} Reviewer 2 table bodies from measured results.')
+    print(f'Built {len(rows)} table bodies from saved results.')
 
 if __name__=='__main__':main()

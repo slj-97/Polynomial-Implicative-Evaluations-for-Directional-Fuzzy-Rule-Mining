@@ -1,4 +1,4 @@
-"""Frozen 20-split protocol for Reviewer 1 Q4; original outputs are read only."""
+"""Compare rule retention and support gaps across 20 splits per dataset."""
 from __future__ import annotations
 
 import hashlib
@@ -73,7 +73,7 @@ def figures(runs: pd.DataFrame, examples: pd.DataFrame, datasets: list[str]) -> 
     axes[0].axhline(0, color="gray", lw=.7)
     axes[0].set_xticks(range(1,5), ["1: addition", "2: removal", "3: unchanged", "4: flip"], rotation=20)
     axes[0].set_ylabel("Support difference at positive delta (x 0.001)")
-    axes[0].set_title("Fixed Q3 pairs; median and 10th–90th percentiles")
+    axes[0].set_title("Representative pairs (median and 10th–90th percentiles)")
     freq = examples[examples.available].copy()
     for offset, (setting, label, color) in enumerate([(-1,"negative","#286b9c"),(0,"zero","#666666"),(1,"positive","#ba5b3b")]):
         values=[]
@@ -283,13 +283,13 @@ def main() -> None:
             q=quantiles(runs.loc[runs.dataset==dataset,key])
             row[key]=f"{q['median']:.4f} [{q['q25']:.4f}, {q['q75']:.4f}]"
         display.append(row)
-    report="# Reviewer 1 Q4: repeated-split stability\n\n"
-    report+="20 frozen seeds 20260903–20260922; 70/30 splits; training-only original preprocessing.\n"
+    report="# Repeated-split stability\n\n"
+    report+="The 20 seeds 20260903–20260922 define 70/30 splits. Preprocessing is fitted on the 70% portion.\n"
     report+="Main analysis: six datasets, three labels, sigma=1, delta=-0.5/0/0.5, thresholds 0.01/0.01/0.5.\n"
-    report+="120 split triplets and 360 evaluations. Original seed and all four Q3 examples reproduced.\n\n"
-    report+=md(pd.DataFrame(display))+"\n\n## Fixed Q3 representatives\n\n"+md(example_summary)+"\n\n"
-    report+="The examples retain their Q3 partitions, parameters and thresholds. Sign agreement is with the original seed, separately at each fixed delta; |gap|<=1e-12 is near zero. Unavailable splits are excluded from frequencies and recorded separately.\n\n"
-    report+="## Claim candidates\n\nUse the per-dataset overlap distributions to characterize within-split parameter effects and their variability across splits. Use the four frozen examples to distinguish sign consistency from selection consistency. Do not infer stable retention merely from a stable sign, treat opposite signs as independent evidence, or infer new-population/causal/predictive utility. Empirical intervals describe shared-data split variation.\n\n"
+    report+="The study covers 120 splits and 360 evaluations. The original split reproduces all four representative pairs.\n\n"
+    report+=md(pd.DataFrame(display))+"\n\n## Representative pairs\n\n"+md(example_summary)+"\n\n"
+    report+="The examples retain their original partitions, parameters and thresholds. Sign agreement is with the original seed, separately at each fixed delta; |gap|<=1e-12 is near zero. Unavailable splits are excluded from frequencies and recorded separately.\n\n"
+    report+="## Reading the summaries\n\nOverlap describes how retention changes within each split. The representative pairs show whether the support-gap sign and retention state persist across splits. The empirical intervals describe variation across splits of the same dataset.\n\n"
     report+="## Validation\n\n"+json.dumps(verification,indent=2)+"\n"
     (OUT / "analysis-report.md").write_text(report,encoding="utf-8")
     (OUT / "stats-appendix.md").write_text("""# Statistical definitions
@@ -299,7 +299,7 @@ split the two directional settings are paired with the symmetric reference.
 The main table uses median and [25th,75th] empirical percentiles (NumPy/pandas
 linear interpolation), not a confidence interval. Counts may have fractional
 quantiles. Representative gaps use median and [10th,90th] percentiles.
-Sign agreement uses the Q3 original-seed sign at each fixed nonzero delta;
+Sign agreement uses the sign on the original split at each fixed nonzero delta;
 absolute gaps <=1e-12 are near zero. An unavailable rule is not unretained:
 report available and unavailable denominators separately. Empty/empty Jaccard
 is 1 with both counts and union saved. Addition/loss and state changes are
@@ -316,7 +316,7 @@ reference by dataset and parameter sign. Boxes median/IQR; whiskers min/max;
 dots are the 20 dependent splits. Read the distribution rather than a single
 original split. No confidence interval or cross-split set Jaccard is shown.
 2. figure-02-representative-stability: representative_runs.csv; gaps for the
-four frozen Q3 pairs at positive delta, with median and 10th/90th percentiles,
+four representative pairs at positive delta, with median and 10th/90th percentiles,
 and pair-state-change frequencies relative to symmetric within each split.
 Each pair keeps its original parameters. This separates sign from retention
 stability; examples are descriptive and fixed before resplitting.

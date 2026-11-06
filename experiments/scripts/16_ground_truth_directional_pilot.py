@@ -250,7 +250,7 @@ def _write_reports(frame: pd.DataFrame, summary: pd.DataFrame, contrasts: pd.Dat
     all_pair_increment_max = float(
         (nonsymmetric["margin_all_pairs"] - nonsymmetric["symmetric_all_pair_margin"]).abs().max()
     )
-    decision = "advance to independent confirmation" if not passed.empty else "retain the current manuscript positioning"
+    decision = "advance to independent confirmation" if not passed.empty else "no candidate met the criterion"
     report = f"""# Ground-truth directional pilot: analysis report
 
 ## Analysis question
@@ -265,21 +265,16 @@ when the data-generating process has a documented positive-lag order?
 - Unit of analysis: independently generated realization; operator comparisons are paired within realization.
 - Primary metric: High--High directional ranking accuracy; ties count as one half.
 - The maximum absolute operator-dependent change in the complete-label-pair mean margin was {all_pair_increment_max:.3e}, confirming cancellation to numerical precision.
-- Frozen-rule decision: **{decision}**.
+- Decision under the prespecified criterion: **{decision}**.
 
 ## Primary contrasts
 
 {contrasts.to_markdown(index=False, floatfmt='.4g')}
 
-## Claim candidates
+## Pilot outcome
 
-- Claim:
-  - Source evidence: `paired-contrasts.csv` and `figure-02-paired-ablation.pdf`.
-  - Allowed wording: This exploratory known-order pilot {'identified a parameter candidate for independent confirmation' if not passed.empty else 'did not identify a fixed nonsymmetric parameter satisfying the pre-specified advancement rule'}.
-  - Forbidden stronger wording: the evaluation recovers causal direction; the best inspected parameter is validated; nonsymmetry universally improves direction recovery.
-  - Uncertainty: this is a development experiment on simulated autoregressive systems with a known lag.
-  - Next check: {'run a fresh-seed confirmation with a held-out mechanism' if not passed.empty else 'do not add a direction-recovery claim; retain the operator-sensitivity interpretation'}.
-  - Decision: {'revise' if not passed.empty else 'keep'}.
+The prespecified criterion {'identified a candidate for independent confirmation' if not passed.empty else 'identified no candidate for independent confirmation'}.
+See `paired-contrasts.csv` and `figure-02-paired-ablation.pdf`.
 
 ## Limitations
 
@@ -322,9 +317,7 @@ labels, or substitute for validation on a documented physical process.
 
 - Purpose: show whether a fixed delta improves accuracy over the matched symmetric member.
 - Data: paired realization-level accuracy differences, summarized separately by mechanism.
-- Observation to inspect: sign consistency across tanh and saturation, not the largest single bar.
-- Decision consequence: only a delta satisfying the frozen rule can proceed to confirmation.
-- Caveat: this figure is exploratory and is not manuscript-ready confirmatory evidence.
+- The paired contrasts show the direction of the accuracy change for each mechanism.
 """
     (output / "figure-catalog.md").write_text(catalog, encoding="utf-8")
 

@@ -1,4 +1,4 @@
-"""Reanalyse frozen tabular exports for Reviewer 1 Q3; never rewrite inputs."""
+"""Compare rule retention at matched directional parameters using saved tabular results."""
 from __future__ import annotations
 
 import hashlib
@@ -374,7 +374,7 @@ def write_reports(primary: pd.DataFrame, matched: pd.DataFrame, changed: pd.Data
     flip_events = flip_frame[flip_frame.setting.eq("zero")]
     unique_flipped_pairs = len(flip_events.drop_duplicates(["dataset", "label_count", "item_a", "item_c"]))
     primary_minimum = min(primary.zero_to_minus_jaccard.min(), primary.zero_to_plus_jaccard.min())
-    report = f"""# Reviewer 1 Q3: measured matched-rule effects
+    report = f"""# Matched rule retention
 
 ## Protocol and comparison unit
 
@@ -386,10 +386,9 @@ unordered singleton item pairs and both directed rules. No new data split,
 threshold tuning, candidate subsampling or parameter pooling was used.
 
 Primary display: three labels, sigma in {{0.5, 1}}, delta in {{-sigma/2,0,+sigma/2}},
-coverage/support/confidence thresholds (0.01,0.01,0.5). These display constants
-were declared before the new full-grid analysis; the first inspection of
-the uploaded artifacts used the same constants. The full-grid CSV preserves
-every cell. Counts concern directed rules. Jaccard treats two empty sets as 1.
+and coverage, support, and confidence thresholds (0.01,0.01,0.5).
+The full-grid CSV reports every setting. Counts are for directed rules.
+Jaccard similarity is 1 when both sets are empty.
 
 ## Primary numeric table
 
@@ -406,7 +405,7 @@ every cell. Counts concern directed rules. Jaccard treats two empty sets as 1.
 - Maximum absolute baseline effective-threshold margin among changed directed-rule records: {margin_max:.9g}.
 - Fraction of changed directed-rule records where confidence imposes a stricter support requirement than the nominal support threshold: {confidence_governed:.6f}. Records can recur across parameters and thresholds.
 
-## Interpretation supported by the measurements
+## Support gaps and retention
 
 The antisymmetric component changes some retained rules even when the symmetric
 component is fixed. The primary display has high overlap; stricter thresholds
@@ -441,19 +440,11 @@ pair disagreement flags reconstructed exactly. {manifest['scalar_direct_checks']
 record-level scalar checks had maximum discrepancy {manifest['max_direct_error']:.3g}.
 Every stored per-rule support perturbation matched delta*Gamma/2 within 1e-12.
 The original confidence predicate and effective-support-threshold predicate
-gave identical decisions. Historical input artifacts were not modified.
+gave identical decisions.
 
-There is one original split per dataset; item pairs share observations.
-Results are conditional descriptive counts, not independent replications.
-Repeated-split stability belongs to Q4. The manuscript and response letter
-have not been edited by this analysis script.
-
-## Claim candidates
-
-- Keep: fixed-sigma antisymmetric perturbations can add or remove threshold-near rules. Evidence: `primary_summary.csv`, `changed_rules.parquet`.
-- Keep: report the measured degree of overlap and actual state changes. Evidence: `matched_contrasts.csv`, `state_transitions.csv`.
-- Reject: opposite signs necessarily reverse the retained orientation; a signed support identity alone cannot establish this.
-- Reject: larger support gaps establish better rules, a learned direction, or cross-split stability.
+These counts describe one split per dataset. Item pairs within a dataset
+share observations. The repeated-split analysis reports how retention varies
+across splits.
 """
     (OUTPUT / "analysis-report.md").write_text(report, encoding="utf-8")
     (OUTPUT / "stats-appendix.md").write_text("""# Descriptive comparison definitions
