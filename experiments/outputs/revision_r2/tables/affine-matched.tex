@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering\color{red}
+\caption{Retained rules under matched admissible affine evaluations.}
+\label{tab:affine-matched}
+\begin{tabular}{lrrrrrr}
+\toprule
+Dataset & $N_{\mathrm S,-}$ & $N_{\mathrm S,0}$ & $N_{\mathrm S,+}$ & $N_{\mathrm B,-}$ & $N_{\mathrm B,0}$ & $N_{\mathrm B,+}$ \\
+\midrule
+Iris & 30 & 30 & 29 & 37 & 37 & 37 \\
+WDBC & 218 & 217 & 217 & 283 & 284 & 285 \\
+Vehicle & 705 & 703 & 699 & 971 & 969 & 971 \\
+Abalone & 124 & 124 & 123 & 133 & 133 & 133 \\
+MAGIC & 215 & 213 & 211 & 268 & 266 & 265 \\
+Online News & 8458 & 8450 & 8436 & 8824 & 8821 & 8815 \\
+\bottomrule
+\end{tabular}
+\par\vspace{0.4ex}\footnotesize\emph{Note:} S: original subclass with $\sigma=0.5$; B: $Q=1/2+(x+y)/8+d(x-y)/2$. Signs correspond to $d=\pm0.25$; zero is symmetric. All use three labels and thresholds $(0.01,0.01,0.5)$. Matched $d$ gives the same support difference and $\mathfrak D=|d|/140$.
+\end{table*}

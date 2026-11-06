@@ -1,0 +1,52 @@
+{
+  "lower": {
+    "Length": 0.2,
+    "Diameter": 0.145,
+    "Height": 0.045,
+    "Whole_weight": 0.04,
+    "Shucked_weight": 0.0157,
+    "Viscera_weight": 0.008,
+    "Shell_weight": 0.0121
+  },
+  "upper": {
+    "Length": 0.735,
+    "Diameter": 0.585,
+    "Height": 0.22,
+    "Whole_weight": 2.1489000000000016,
+    "Shucked_weight": 1.0066000000000002,
+    "Viscera_weight": 0.47370000000000023,
+    "Shell_weight": 0.6209000000000001
+  },
+  "active_continuous_columns": [
+    "Length",
+    "Diameter",
+    "Height",
+    "Whole_weight",
+    "Shucked_weight",
+    "Viscera_weight",
+    "Shell_weight"
+  ],
+  "item_names": [
+    "Length::0",
+    "Length::1",
+    "Length::2",
+    "Diameter::0",
+    "Diameter::1",
+    "Diameter::2",
+    "Height::0",
+    "Height::1",
+    "Height::2",
+    "Whole_weight::0",
+    "Whole_weight::1",
+    "Whole_weight::2",
+    "Shucked_weight::0",
+    "Shucked_weight::1",
+    "Shucked_weight::2",
+    "Viscera_weight::0",
+    "Viscera_weight::1",
+    "Viscera_weight::2",
+    "Shell_weight::0",
+    "Shell_weight::1",
+    "Shell_weight::2"
+  ]
+}

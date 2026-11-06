@@ -1,0 +1,27 @@
+{
+  "label_counts": [
+    3,
+    5
+  ],
+  "label_pair_aggregation": "mean over all ordered triangular-label pairs within seed/configuration",
+  "max_identity_error": 3.174106635791512e-17,
+  "numpy": "1.26.4",
+  "pandas": "2.2.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "rows": 2332800,
+  "seed": 20260903,
+  "smoke": false,
+  "threshold_specific_selection_columns": [
+    "SA_cov0p01_supp0p01_conf0p3",
+    "SA_cov0p01_supp0p01_conf0p5",
+    "SA_cov0p01_supp0p01_conf0p7",
+    "SA_cov0p01_supp0p025_conf0p3",
+    "SA_cov0p01_supp0p025_conf0p5",
+    "SA_cov0p01_supp0p025_conf0p7",
+    "SA_cov0p01_supp0p05_conf0p3",
+    "SA_cov0p01_supp0p05_conf0p5",
+    "SA_cov0p01_supp0p05_conf0p7"
+  ],
+  "timestamp_utc": "2026-09-07T14:59:31.186262+00:00"
+}

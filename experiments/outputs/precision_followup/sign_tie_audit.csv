@@ -1,0 +1,31 @@
+dataset,seed,chosen_negative_tie,chosen_positive_tie,sign_tie_used,eligible_near_best
+iris,20260903,0.0,0.0,False,"[-1.0, -0.5, 0.0, 0.5, 1.0]"
+iris,20260904,1.0,1.0,False,[1.0]
+iris,20260905,0.5,0.5,False,"[0.5, 1.0]"
+iris,20260906,-1.0,-1.0,False,[-1.0]
+iris,20260907,0.0,0.0,False,"[-1.0, -0.5, 0.0, 0.5, 1.0]"
+wdbc,20260903,0.0,0.0,False,[0.0]
+wdbc,20260904,-1.0,-1.0,False,[-1.0]
+wdbc,20260905,-1.0,-1.0,False,[-1.0]
+wdbc,20260906,0.0,0.0,False,[0.0]
+wdbc,20260907,-0.5,-0.5,False,[-0.5]
+vehicle,20260903,-1.0,-1.0,False,[-1.0]
+vehicle,20260904,-1.0,-1.0,False,[-1.0]
+vehicle,20260905,-1.0,-1.0,False,[-1.0]
+vehicle,20260906,0.0,0.0,False,"[-1.0, 0.0]"
+vehicle,20260907,-1.0,-1.0,False,[-1.0]
+abalone,20260903,0.0,0.0,False,[0.0]
+abalone,20260904,-1.0,-1.0,False,[-1.0]
+abalone,20260905,0.5,0.5,False,[0.5]
+abalone,20260906,-1.0,-1.0,False,[-1.0]
+abalone,20260907,-1.0,-1.0,False,[-1.0]
+magic,20260903,0.5,0.5,False,[0.5]
+magic,20260904,1.0,1.0,False,[1.0]
+magic,20260905,-0.5,-0.5,False,[-0.5]
+magic,20260906,0.0,0.0,False,[0.0]
+magic,20260907,0.5,0.5,False,[0.5]
+online_news,20260903,-0.5,-0.5,False,[-0.5]
+online_news,20260904,-0.5,0.5,True,"[-0.5, 0.5]"
+online_news,20260905,-0.5,-0.5,False,"[-0.5, 1.0]"
+online_news,20260906,-0.5,-0.5,False,"[-1.0, -0.5]"
+online_news,20260907,-1.0,-1.0,False,[-1.0]

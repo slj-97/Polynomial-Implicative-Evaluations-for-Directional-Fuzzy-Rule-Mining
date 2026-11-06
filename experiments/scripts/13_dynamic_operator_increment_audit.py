@@ -252,7 +252,7 @@ def main() -> None:
     write_dataframe(pd.DataFrame(delta_rows), "experiments/outputs/summaries/dynamic_delta_audit.csv")
 
     null_rows: list[dict[str, object]] = []
-    for scope_name, scope in [("all delta", seed_first), ("delta != 0", seed_first_nonzero)]:
+    for scope_name, scope in [("all delta", seed_first), ("delta != 0", seed_first[seed_first["delta"] != 0.0])]:
         nonnull_scope = scope[~scope["independent_null"]]
         for strength, part in nonnull_scope.groupby("lambda", dropna=False):
             for metric, values in [("Psi", part["Psi"]), ("abs_Psi", part["abs_Psi"]), ("abs_Omega", part["abs_Omega"])]:

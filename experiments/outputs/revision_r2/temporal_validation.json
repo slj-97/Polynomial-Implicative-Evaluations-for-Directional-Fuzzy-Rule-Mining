@@ -1,0 +1,16 @@
+{
+  "independent_trajectories": 100,
+  "label_pair_records": 900,
+  "max_saved_aggregate_error": 2.1385887852276575e-17,
+  "statistical_unit": "one complete trajectory",
+  "configuration": {
+    "true_lag": 1,
+    "evaluation_lag": 1,
+    "coupling": 0.5,
+    "noise": 0.1,
+    "mechanism": "linear",
+    "sigma": 1.0,
+    "delta": 0.5,
+    "label_count": 3
+  }
+}

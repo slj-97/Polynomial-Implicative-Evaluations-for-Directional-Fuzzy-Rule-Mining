@@ -1,0 +1,4 @@
+dataset,seed,tie_policy,delta,development_retained,evaluation_retained,jaccard
+online_news,20260904,negative,-0.5,8369,8383,0.9869529118728502
+online_news,20260904,positive,0.5,8315,8338,0.9858096828046744
+online_news,20260904,symmetric,0.0,8350,8360,0.9869203329369798

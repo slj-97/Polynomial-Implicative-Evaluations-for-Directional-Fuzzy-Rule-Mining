@@ -1,0 +1,16 @@
+{
+  "all_retained_sets_equal": true,
+  "delta": 0.375,
+  "evaluation": 240,
+  "numpy": "1.26.4",
+  "pandas": "2.2.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "replications": 50,
+  "rows": 600,
+  "seed": 20260903,
+  "sigma": 0.75,
+  "timestamp_utc": "2026-09-08T02:24:41.962900+00:00",
+  "train": 360,
+  "variables": 5
+}

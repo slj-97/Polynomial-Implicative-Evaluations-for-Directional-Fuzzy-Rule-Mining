@@ -1,0 +1,6 @@
+{
+  "status": "interrupted_before_summary",
+  "complete_workers": 80,
+  "reason": "large wall and CPU time variation reappeared; evaluate fixed logical-processor affinity before choosing final measurement protocol",
+  "all_completed_records_preserved": true
+}

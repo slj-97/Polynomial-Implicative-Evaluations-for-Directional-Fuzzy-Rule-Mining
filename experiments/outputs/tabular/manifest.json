@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "protocol": "static-fixed-split",
+  "smoke": false,
+  "config_sha256": "e312f64bc11325588f5ee14f876f249b39da3f6803ee9f7bdd0476b00d39d27a",
+  "common_sha256": "30f0e125a8067a43ea6a96d3dc47162fec8a6596e7e2b6876634d167a4ce1877",
+  "datasets": [
+    {
+      "dataset": "iris",
+      "rows": 150,
+      "predictors": 4,
+      "training_rows": 105,
+      "test_rows": 45,
+      "sha256": "585302be5cdaeb8808182ad4504fe53cda9d04ecdf5633201ef85e0d71a29933"
+    },
+    {
+      "dataset": "wdbc",
+      "rows": 569,
+      "predictors": 10,
+      "training_rows": 398,
+      "test_rows": 171,
+      "sha256": "1fb442481963936e869e33df45249392dc8fcd6fb1713e3c10de35496a8e762d"
+    },
+    {
+      "dataset": "vehicle",
+      "rows": 846,
+      "predictors": 18,
+      "training_rows": 592,
+      "test_rows": 254,
+      "sha256": "0a7dbe5ea67359c7caa60d72d8b7fd09e18cdde8938f36f2398a6eec4cdf6fbf"
+    },
+    {
+      "dataset": "abalone",
+      "rows": 4174,
+      "predictors": 7,
+      "training_rows": 2921,
+      "test_rows": 1253,
+      "sha256": "06aad537a8acf0b9fd2f8d19dad0e7eedf6dc73326ae42e143ce4e3f6a2f21ce"
+    },
+    {
+      "dataset": "magic",
+      "rows": 19020,
+      "predictors": 10,
+      "training_rows": 13314,
+      "test_rows": 5706,
+      "sha256": "0575d01bb56388b4aceb2161808052f4e07fce7e4e6219da9c8b5069eb7b7451"
+    },
+    {
+      "dataset": "online_news",
+      "rows": 39644,
+      "predictors": 58,
+      "training_rows": 27750,
+      "test_rows": 11894,
+      "sha256": "d54bc3024e15f1af2c0e9569b5e881613a65e29b5376cfd709293fd23af1a968"
+    }
+  ],
+  "scope": "Direct swaps and threshold selection only; no process-order or pruning results."
+}

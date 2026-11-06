@@ -1,0 +1,11 @@
+{
+  "historical_rows_checked": 60,
+  "historical_counts_exact": true,
+  "retained_set_agreement": true,
+  "search_runs": 300,
+  "memberships_identical_across_parameters_and_thresholds": true,
+  "coverage_candidate_counts_invariant": true,
+  "paired_comparisons": 100,
+  "cpu_model": "Intel(R) Core(TM) i7-14650HX",
+  "peak_memory_counter": "Windows peak_wset snapshot immediately after search, before key-set construction/serialization"
+}

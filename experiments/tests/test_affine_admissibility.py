@@ -8,6 +8,7 @@ sp = pytest.importorskip("sympy", reason="Install the optional theory dependenci
 
 from experiments.src.affine_admissibility import (
     T, coefficient_tests, is_admissible, nonnegative_on, vertex_interval,
+    polynomial_report, admissibility_report,
 )
 
 
@@ -94,3 +95,30 @@ def test_boundary_checks_alone_are_insufficient(coeffs, failed):
     assert all(nonnegative_on(p, j) for _, p, j in tests[:6])
     assert failed in [name for name, p, j in tests[6:] if not nonnegative_on(p, j)]
     assert not is_admissible(*coeffs)
+
+
+def test_diagnostic_degeneracies_and_repeated_stationary_root():
+    assert polynomial_report(-1, (1, 0))['checks'] == []
+    singleton = polynomial_report(T-1, (1, 1))
+    assert singleton['passed'] and len(singleton['checks']) == 1
+    assert not polynomial_report(-1, (1, 1))['passed']
+    assert polynomial_report(0)['passed']
+    assert not polynomial_report(-1)['passed']
+    report = polynomial_report((T-sp.Rational(1,2))**3+1)
+    stationary = [p for p in report['checks'] if p['kind']=='stationary']
+    assert stationary == [dict(point='1/2', value='1', kind='stationary', nonnegative=True)]
+    assert len(polynomial_report(T**2)['checks']) == 2  # stationary endpoint not duplicated
+    assert polynomial_report(T+1)['passed']  # linear reduction
+    assert admissibility_report('0.5', '0.25', '0')['admissible']
+    with pytest.raises(ValueError):
+        admissibility_report(0.5, 0, 0)
+
+
+def test_worked_interior_rejection_witness():
+    x, y = sp.symbols('x y')
+    a,b,c = -sp.Rational(1,2),sp.Rational(3,2),-2
+    e=x*y+x*y*(1-x)*(1-y)*(a+b*x+c*y)
+    report=admissibility_report(a,b,c)
+    assert all(t['passed'] for t in report['tests'][:6])
+    assert 'U(a,b,c)' in report['failed_tests']
+    assert sp.simplify((sp.diff(e,x)-1).subs({x:sp.Rational(22,25),y:sp.Rational(49,50)})) == sp.Rational(269,3125000)

@@ -1,0 +1,164 @@
+{
+  "coefficients": [
+    "1/2",
+    "1/4",
+    "0"
+  ],
+  "arithmetic": "exact rational/algebraic",
+  "admissible": true,
+  "tests": [
+    {
+      "name": "P1",
+      "polynomial": "3/2 - t/2",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "checks": [
+        {
+          "point": "0",
+          "value": "3/2",
+          "kind": "endpoint",
+          "nonnegative": true
+        },
+        {
+          "point": "1",
+          "value": "1",
+          "kind": "endpoint",
+          "nonnegative": true
+        }
+      ],
+      "passed": true,
+      "status": "nonempty interval"
+    },
+    {
+      "name": "P2",
+      "polynomial": "3*t/4 + 1/4",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "checks": [
+        {
+          "point": "0",
+          "value": "1/4",
+          "kind": "endpoint",
+          "nonnegative": true
+        },
+        {
+          "point": "1",
+          "value": "1",
+          "kind": "endpoint",
+          "nonnegative": true
+        }
+      ],
+      "passed": true,
+      "status": "nonempty interval"
+    },
+    {
+      "name": "P3",
+      "polynomial": "1 - t/2",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "checks": [
+        {
+          "point": "0",
+          "value": "1",
+          "kind": "endpoint",
+          "nonnegative": true
+        },
+        {
+          "point": "1",
+          "value": "1/2",
+          "kind": "endpoint",
+          "nonnegative": true
+        }
+      ],
+      "passed": true,
+      "status": "nonempty interval"
+    },
+    {
+      "name": "P4",
+      "polynomial": "3*t/4 + 1",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "checks": [
+        {
+          "point": "0",
+          "value": "1",
+          "kind": "endpoint",
+          "nonnegative": true
+        },
+        {
+          "point": "1",
+          "value": "7/4",
+          "kind": "endpoint",
+          "nonnegative": true
+        }
+      ],
+      "passed": true,
+      "status": "nonempty interval"
+    },
+    {
+      "name": "P5",
+      "polynomial": "-t**2/4 - t/4 + 3/2",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "checks": [
+        {
+          "point": "0",
+          "value": "3/2",
+          "kind": "endpoint",
+          "nonnegative": true
+        },
+        {
+          "point": "1",
+          "value": "1",
+          "kind": "endpoint",
+          "nonnegative": true
+        }
+      ],
+      "passed": true,
+      "status": "nonempty interval"
+    },
+    {
+      "name": "P6",
+      "polynomial": "t**2/4 + t/4 + 1/2",
+      "interval": [
+        "0",
+        "1"
+      ],
+      "checks": [
+        {
+          "point": "0",
+          "value": "1/2",
+          "kind": "endpoint",
+          "nonnegative": true
+        },
+        {
+          "point": "1",
+          "value": "1",
+          "kind": "endpoint",
+          "nonnegative": true
+        }
+      ],
+      "passed": true,
+      "status": "nonempty interval"
+    },
+    {
+      "name": "U(a,b,c)",
+      "polynomial": "3/4 - 7*t/16",
+      "interval": null,
+      "checks": [],
+      "passed": true,
+      "status": "empty interval"
+    }
+  ],
+  "failed_tests": []
+}

@@ -1,0 +1,12 @@
+{
+  "relaxed_evaluation": "x*y**2",
+  "induced": "x*y**2 - x + 1",
+  "degree": 3,
+  "Ex": "y**2",
+  "Ix": "y**2 - 1",
+  "Iy": "2*x*y",
+  "NP_at_one": "y**2",
+  "multiitem_records": "multiitem_records.csv",
+  "sigma": 1,
+  "formula": "D_delta=D_0+delta*mean(H(T(a,b),c)-H(T(c,b),a))/2"
+}

@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "checked_scalar_values": 7200,
+  "max_error": 8.326672684688674e-17,
+  "method": "Five seeded label-pair rows per evaluation, dataset and partition; direct record-level computation."
+}

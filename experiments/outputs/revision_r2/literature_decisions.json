@@ -1,0 +1,20 @@
+{
+  "AslanAltanHacioglu2022": {
+    "decision": "included in Section VI as application context",
+    "primary_source": "https://doi.org/10.3390/pr10122503",
+    "verified_scope": "Publisher article describes a fuzzy rule base, membership functions and gain regulation in model reference adaptive control; Section 3.2 is the relevant passage.",
+    "manuscript_claim": "The example uses fuzzy rules and memberships to regulate adaptation gain; application validation concerns tracking and disturbance response."
+  },
+  "ANN_fuzzy_converter": {
+    "decision": "not included; focused MRAC example directly supplies the needed fuzzy-rule context",
+    "suggested_doi": "10.1109/ACCESS.2026.3687816",
+    "access_note": "Publisher access was blocked by a JavaScript verification page; no detailed claim about its algorithms or results is made.",
+    "scope_reason": "The present manuscript does not evaluate ANN-based converter control or equilibrium optimization."
+  },
+  "measurement_aware_ILC": {
+    "decision": "not cited as evidence about fuzzy evaluation design",
+    "primary_source": "https://journals.tubitak.gov.tr/elektrik/vol34/iss5/11/",
+    "doi": "10.55730/1300-0632.4283",
+    "verified_scope": "Publisher abstract describes an inner PI loop and outer zero-phase iterative-learning law; it does not provide the fuzzy PID example suggested in the review."
+  }
+}

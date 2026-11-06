@@ -1,0 +1,211 @@
+{
+  "tables": [
+    {
+      "label": "controlled",
+      "rows": 4,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "exchangeable-fixed",
+      "rows": 3,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "static-benchmarks",
+      "rows": 6,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "static-operator-comparison",
+      "rows": 10,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "matched-retention",
+      "rows": 12,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "split-stability",
+      "rows": 6,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "pruning",
+      "rows": 4,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "computational-extension",
+      "rows": 6,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "dynamic",
+      "rows": 5,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "selection-thresholds",
+      "rows": 9,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "parameter",
+      "rows": 5,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "matched-flips",
+      "rows": 9,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "matched-examples",
+      "rows": 16,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "split-counts",
+      "rows": 12,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "split-gaps",
+      "rows": 4,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "split-retention",
+      "rows": 12,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "computational-scale",
+      "rows": 18,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "computational-parameters",
+      "rows": 18,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "affine-matched",
+      "rows": 6,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "validation-selection",
+      "rows": 6,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "multiitem-worked",
+      "rows": 3,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "temporal-variability",
+      "rows": 18,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "computational-axes",
+      "rows": 42,
+      "displayed_numeric_cells_match": true
+    },
+    {
+      "label": "candidate-phases",
+      "rows": 7,
+      "displayed_numeric_cells_match": true
+    }
+  ],
+  "manuscript_numbers_checked": true,
+  "input_files": [
+    {
+      "path": "experiments\\outputs\\raw_results\\synthetic_membership_raw_v2.parquet",
+      "sha256": "2681cf8868ced1fb4f7f48baa172544ce9e3363e18ce43661fc9c04ca33dea2f"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r1_q7\\summary.csv",
+      "sha256": "adb3ba910c7f6a95df919573502ecbda40f23bb86d1247bffb7191cc5c1568b9"
+    },
+    {
+      "path": "experiments\\outputs\\tabular\\summary.csv",
+      "sha256": "6b7ceb20828a4b68a7dc1261fbc03e2c4cb4c47748a0cb716ba6a5a8a8ac2332"
+    },
+    {
+      "path": "experiments\\outputs\\tabular\\datasets.csv",
+      "sha256": "324c2b52a9493839dac3124edf37904b39feef409086a3bef6d958ef89067b00"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r1_q3\\primary_summary.csv",
+      "sha256": "6a42bb7856a817f53533002b5d22f70da182e7224b9928d1c87642847c61d1ce"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r1_q3\\matched_contrasts.csv",
+      "sha256": "e88352d7b5d534ca7285f63909ea000cf95c71b895a6c33e8d34f057bda150d5"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r1_q4\\dataset_summary.csv",
+      "sha256": "6287374069a43017bdc69193c468079a053e33a9edb35b990ff1cd99c02a815c"
+    },
+    {
+      "path": "experiments\\outputs\\raw_results\\pruning_multivariate.csv",
+      "sha256": "5471b5cdc0ca44378a10a8350f4df9681a4cbfc722f7c99a6adbbe58c313819b"
+    },
+    {
+      "path": "experiments\\outputs\\computational_followup\\controlled\\measurements.csv",
+      "sha256": "ff475a0ffbab6f08140dd678fab8eb344d0adc75f38f23bb4264224e9b29014a"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r1_q6\\dynamic_null_completed.csv",
+      "sha256": "0054a9bb3bc4c0c3ba91cdf3ff758452f212375fd581af906c2cb7dd103384f0"
+    },
+    {
+      "path": "experiments\\outputs\\summaries\\selection_asymmetry_thresholds_v2.csv",
+      "sha256": "8aa26aa018bc03a351caaa892c2c158a781690ac37d286e99453ed6bf1e3eef0"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r1_q3\\representative_rules.csv",
+      "sha256": "ad855e5e789e80d4dbfce32e0186690cabac641d3babce2927cbe0ebc28601f4"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r1_q4\\representative_summary.csv",
+      "sha256": "dd7d554ce25137b6dfe4fc5bcacabaab3dddd8a3f2b067520bda7341e0e10491"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r2\\affine_summary.csv",
+      "sha256": "b3c6f36f7753cef92dc117532f39577faaf08db88f9a300c1abbcfbafb1e7c80"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r2\\selection_choices.csv",
+      "sha256": "758b88ea9cd06c40961e079e5addbfa0659148b3f53c32a2a898db8e28400ea0"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r2\\selection_outer.csv",
+      "sha256": "c65a7248eb0f700867e44a6a3c766e4c71a6b74d634c61da81bb4f641c0e6834"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r2\\multiitem_summary.csv",
+      "sha256": "743098ebfbc983b07ecade598e9a796985ca9f2b99e04677a2ea58d1afd04522"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r2\\temporal_summary.csv",
+      "sha256": "db9add432c39ce93fcc7c1c7f20778dc48c130a61dbb273edd242572392045e2"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r2\\computation\\summary.csv",
+      "sha256": "a6f8b54e98a7c2382b8543b773adac3bcda8c405db00f2e7cc921e1684546bb4"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r2\\computation\\phase_diagnostics.csv",
+      "sha256": "ee286d697279ce0f432d2b65490834932c5305f5c0fc3dfc664286a5f314a376"
+    },
+    {
+      "path": "experiments\\outputs\\revision_r2\\tables\\rows.json",
+      "sha256": "b875a877e906c36596d37ec943fd49b9ef275e1cd87b6b26d6938d7145729f94"
+    }
+  ]
+}

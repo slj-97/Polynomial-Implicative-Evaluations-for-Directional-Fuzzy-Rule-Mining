@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "dynamic_full": true,
+    "dynamic_identity_within_tolerance": true,
+    "frozen_three_label_values_unchanged": true,
+    "label_counts_3_and_5": true,
+    "membership_full": true,
+    "nine_selection_thresholds": true,
+    "replications_50": true
+  },
+  "hashes": {
+    "dynamic_v2": "b38dd0bce5f48f8a4bb38132a0841a9cd8e00551a77efa953fa98b7b98a1f8b3",
+    "membership_v2": "2681cf8868ced1fb4f7f48baa172544ce9e3363e18ce43661fc9c04ca33dea2f"
+  },
+  "maximum_identity_error": 3.174106635791512e-17,
+  "maximum_three_label_regression_difference": 0.0,
+  "real_data_completed": false,
+  "rows": {
+    "dynamic_v2": 2332800,
+    "membership_v2": 129600
+  }
+}

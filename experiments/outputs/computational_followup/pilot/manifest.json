@@ -1,0 +1,18 @@
+{
+  "batch": "pilot",
+  "searches": 63,
+  "all_counts_and_keys_match_original": true,
+  "source_sha256": "b523500f63d86bc3f9e32a5aebce4dbc39969d6576516687c75b04d0bd9621f8",
+  "config_sha256": "310f3d4deea32f1809d0abf0e4f68982a448a9b752e8fcf7754b7468fffd75db",
+  "script_sha256": "3393b36de88969c3bd63b5463af8aa3f8bba3896eee740ae4b95ca861fb2e898",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "1.26.4",
+  "pandas": "2.2.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "psutil": "5.9.0",
+  "timing": "unchanged miner including output sort; imports, preprocessing, comparison and JSON excluded",
+  "memory": "lifetime worker peak through ordinary search; diagnostics occur afterwards",
+  "execution": "fresh sequential workers; one BLAS thread; seeded shuffle of configurations per round",
+  "seed_order": "20260903 onward",
+  "shuffle_seed": 20261024
+}

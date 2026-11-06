@@ -1,0 +1,34 @@
+{
+  "lower": {
+    "SepalLength": 4.4,
+    "SepalWidth": 2.2,
+    "PetalLength": 1.104,
+    "PetalWidth": 0.1
+  },
+  "upper": {
+    "SepalLength": 7.7,
+    "SepalWidth": 4.095999999999999,
+    "PetalLength": 6.687999999999998,
+    "PetalWidth": 2.5
+  },
+  "active_continuous_columns": [
+    "SepalLength",
+    "SepalWidth",
+    "PetalLength",
+    "PetalWidth"
+  ],
+  "item_names": [
+    "SepalLength::0",
+    "SepalLength::1",
+    "SepalLength::2",
+    "SepalWidth::0",
+    "SepalWidth::1",
+    "SepalWidth::2",
+    "PetalLength::0",
+    "PetalLength::1",
+    "PetalLength::2",
+    "PetalWidth::0",
+    "PetalWidth::1",
+    "PetalWidth::2"
+  ]
+}

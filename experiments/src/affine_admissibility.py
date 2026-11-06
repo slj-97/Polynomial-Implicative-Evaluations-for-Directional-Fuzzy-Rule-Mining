@@ -13,21 +13,43 @@ T = sp.Symbol("t", real=True)
 Interval = tuple[sp.Expr, sp.Expr] | None
 
 
-def nonnegative_on(poly: sp.Expr, interval: Interval = (sp.S.Zero, sp.S.One)) -> bool:
-    """Check endpoints and all interior stationary points of a degree <=3 polynomial."""
-    if interval is None:
-        return True
-    left, right = map(sp.sympify, interval)
-    if left > right:
-        return True
+def polynomial_report(poly: sp.Expr, interval: Interval = (sp.S.Zero, sp.S.One)) -> dict:
+    """Return exact, JSON-ready endpoint/stationary-point evidence."""
     p = sp.Poly(poly, T)
     if p.degree() > 3:
         raise ValueError("Only polynomials of degree at most three are supported")
-    points = [left, right]
+    result = dict(polynomial=str(p.as_expr()), interval=None, checks=[], passed=True)
+    if interval is None:
+        result['status'] = 'empty interval'
+        return result
+    left, right = map(sp.sympify, interval)
+    if left > right:
+        result['status'] = 'empty interval'
+        return result
+    result['interval'] = [str(left), str(right)]
+    result['status'] = 'singleton' if left == right else 'nonempty interval'
+    points = list(dict.fromkeys([left, right]))
     derivative = p.diff()
     if not derivative.is_zero:
         points.extend(t for t in sp.real_roots(derivative) if left < t < right)
-    return all(bool(sp.simplify(p.eval(t)) >= 0) for t in points)
+    for t in dict.fromkeys(points):
+        value = sp.simplify(p.eval(t))
+        result['checks'].append(dict(point=str(t), value=str(value),
+            kind='endpoint' if t in (left, right) else 'stationary', nonnegative=bool(value >= 0)))
+    result['passed'] = all(check['nonnegative'] for check in result['checks'])
+    return result
+
+
+def nonnegative_on(poly: sp.Expr, interval: Interval = (sp.S.Zero, sp.S.One)) -> bool:
+    """Check endpoints and distinct interior stationary points, without tolerances."""
+    return polynomial_report(poly, interval)['passed']
+
+
+def exact_coefficients(a, b, c) -> tuple[sp.Rational, sp.Rational, sp.Rational]:
+    """Accept integers, rationals and rational strings; reject inexact float input."""
+    if any(isinstance(v, (float, sp.Float)) for v in (a, b, c)):
+        raise ValueError('Use fraction or decimal strings instead of floating-point coefficients')
+    return tuple(sp.Rational(v) for v in (a, b, c))
 
 
 def vertex_interval(a: sp.Rational, b: sp.Rational, c: sp.Rational) -> Interval:
@@ -44,7 +66,7 @@ def vertex_interval(a: sp.Rational, b: sp.Rational, c: sp.Rational) -> Interval:
 
 def coefficient_tests(a: sp.Rational, b: sp.Rational, c: sp.Rational) -> list[tuple[str, sp.Expr, Interval]]:
     """Construct the six boundary and up to two conditional vertex tests."""
-    a, b, c = map(sp.Rational, (a, b, c))
+    a, b, c = exact_coefficients(a, b, c)
     boundary = [
         1 + (1 - T) * (a + c * T),
         1 - (1 - T) * (a + b + c * T),
@@ -68,3 +90,13 @@ def coefficient_tests(a: sp.Rational, b: sp.Rational, c: sp.Rational) -> list[tu
 def is_admissible(a: sp.Rational, b: sp.Rational, c: sp.Rational) -> bool:
     """Decide admissibility for exact rational coefficients (use strings for decimals)."""
     return all(nonnegative_on(p, interval) for _, p, interval in coefficient_tests(a, b, c))
+
+
+def admissibility_report(a, b, c) -> dict:
+    """Explain every applicable test; failure never short-circuits the report."""
+    coeffs = exact_coefficients(a, b, c)
+    tests = [dict(name=name, **polynomial_report(p, interval))
+             for name, p, interval in coefficient_tests(*coeffs)]
+    return dict(coefficients=list(map(str, coeffs)), arithmetic='exact rational/algebraic',
+                admissible=all(t['passed'] for t in tests), tests=tests,
+                failed_tests=[t['name'] for t in tests if not t['passed']])

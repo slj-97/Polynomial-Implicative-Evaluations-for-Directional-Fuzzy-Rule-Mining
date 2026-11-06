@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "engine": "OUR-MAIN",
+  "protocol": "static-20-split-fixed-sigma-stability",
+  "datasets": [
+    "iris",
+    "wdbc",
+    "vehicle",
+    "abalone",
+    "magic",
+    "online_news"
+  ],
+  "seeds": [
+    20260903,
+    20260904,
+    20260905,
+    20260906,
+    20260907,
+    20260908,
+    20260909,
+    20260910,
+    20260911,
+    20260912,
+    20260913,
+    20260914,
+    20260915,
+    20260916,
+    20260917,
+    20260918,
+    20260919,
+    20260920,
+    20260921,
+    20260922
+  ],
+  "main_evaluations": 360,
+  "main_split_comparisons": 120,
+  "main_sigma": 1,
+  "main_labels": 3,
+  "thresholds": [
+    0.01,
+    0.01,
+    0.5
+  ],
+  "source_config_sha256": "ca6f61d5d15f68fc49821b19b0b313df65ba602c88bf569655e57e9064dbeb36",
+  "example_specification_sha256": "ad855e5e789e80d4dbfce32e0186690cabac641d3babce2927cbe0ebc28601f4",
+  "analysis_script_sha256": "a614b48578bbe2cf2e9545747ac338a898e8dfd7637bede54056a26d862fc4e3",
+  "moment_module_sha256": "e86108ee1b93ab4624078e4985706b38dd711d4be3734ffd5a391a527f19ceb2",
+  "verification": {
+    "original_seed_checked_datasets": [
+      "iris",
+      "wdbc",
+      "vehicle",
+      "abalone",
+      "magic",
+      "online_news"
+    ],
+    "max_original_score_error": 9.181544413650045e-14,
+    "max_direct_error": 2.220446049250313e-16,
+    "direct_scalar_checks": 2880,
+    "original_flag_disagreements": 0,
+    "effective_threshold_disagreements": 0,
+    "max_support_identity_error": 1.1102230246251565e-16
+  },
+  "unavailable_example_rows": 0,
+  "interpretation": "Descriptive repeated-split sensitivity on shared source data; no inferential tests or confidence intervals."
+}

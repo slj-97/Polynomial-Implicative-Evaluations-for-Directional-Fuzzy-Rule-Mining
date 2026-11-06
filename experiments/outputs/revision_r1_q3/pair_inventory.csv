@@ -1,0 +1,13 @@
+dataset,label_count,unordered_pairs,directed_candidates,evaluation_rows
+iris,3,54,108,45
+iris,5,150,300,45
+wdbc,3,405,810,171
+wdbc,5,1125,2250,171
+vehicle,3,1377,2754,254
+vehicle,5,3825,7650,254
+abalone,3,189,378,1253
+abalone,5,525,1050,1253
+magic,3,405,810,5706
+magic,5,1125,2250,5706
+online_news,3,12574,25148,11894
+online_news,5,30174,60348,11894

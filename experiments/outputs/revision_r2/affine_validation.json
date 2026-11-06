@@ -1,0 +1,6 @@
+{
+  "scalar_checks": 216,
+  "max_error": 2.220446049250313e-16,
+  "coefficients_verified_exactly": true,
+  "matched_gap_tolerance": 1e-12
+}

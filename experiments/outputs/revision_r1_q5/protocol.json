@@ -1,0 +1,46 @@
+{
+  "seeds": [
+    20260903,
+    20260904,
+    20260905,
+    20260906,
+    20260907,
+    20260908,
+    20260909,
+    20260910,
+    20260911,
+    20260912
+  ],
+  "variable_counts": [
+    5,
+    8,
+    10
+  ],
+  "rows": 600,
+  "training_rows": 360,
+  "labels": 3,
+  "max_antecedent_size": 4,
+  "sigma": 0.75,
+  "scale_delta": 0.375,
+  "parameter_variables": 8,
+  "parameter_deltas": [
+    -0.375,
+    0.0,
+    0.375
+  ],
+  "coverage_threshold": 0.01,
+  "support_thresholds": [
+    0.01,
+    0.05
+  ],
+  "confidence_threshold": 0.5,
+  "modes": [
+    "exhaustive",
+    "coverage_only",
+    "coverage_support"
+  ],
+  "process_order": "cyclic_by_seed_and_configuration",
+  "timing": "perf_counter around mine_rules including result sorting; excludes imports, preprocessing, equality checks and serialization",
+  "memory": "Windows whole-worker peak working set, includes startup, preprocessing and returned rules; report pre-search RSS separately",
+  "threads": 1
+}

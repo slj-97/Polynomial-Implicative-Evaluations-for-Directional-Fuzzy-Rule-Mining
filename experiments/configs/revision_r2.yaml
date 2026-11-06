@@ -1,0 +1,36 @@
+# Fixed before the Reviewer 2 analyses; no selection using outer evaluation data.
+seeds: [20260903, 20260904, 20260905, 20260906, 20260907]
+thresholds: {coverage: 0.01, support: 0.01, confidence: 0.5}
+selection:
+  sigma: 1.0
+  deltas: [-1.0, -0.5, 0.0, 0.5, 1.0]
+  inner_repeats: 3
+  inner_training_fraction: 0.8
+  minimum_rules_fraction_of_symmetric: 0.9
+  tie_tolerance: 0.0001
+affine:
+  broader_a: 0.5
+  broader_sum: 0.25
+  subclass_sigma: 0.5
+  differences: [-0.25, 0.0, 0.25]
+dynamic:
+  true_lag: 1
+  evaluation_lag: 1
+  coupling: 0.5
+  noise: 0.1
+  mechanism: linear
+  sigma: 1.0
+  delta: 0.5
+  label_count: 3
+computational:
+  support_thresholds: [0.01, 0.05]
+  sigma: 0.75
+  delta: 0.375
+  cases:
+    - {name: synthetic-base, dataset: synthetic, variables: 5, evaluation_rows: 240, labels: 3, K: 4}
+    - {name: synthetic-n1000, dataset: synthetic, variables: 5, evaluation_rows: 1000, labels: 3, K: 4}
+    - {name: synthetic-n4000, dataset: synthetic, variables: 5, evaluation_rows: 4000, labels: 3, K: 4}
+    - {name: synthetic-label5, dataset: synthetic, variables: 5, evaluation_rows: 240, labels: 5, K: 4}
+    - {name: synthetic-K2, dataset: synthetic, variables: 5, evaluation_rows: 240, labels: 3, K: 2}
+    - {name: iris-K2, dataset: iris, labels: 3, K: 2}
+    - {name: wdbc-K2, dataset: wdbc, labels: 3, K: 2}

@@ -1,0 +1,13 @@
+example,delta,available,unavailable,gap_median,gap_q10,gap_q90,sign_agrees,positive,negative,near_zero,selected_forward_count,selected_reverse_count,state_changed_count,forward_added_count,forward_removed_count,reverse_added_count,reverse_removed_count,matched_sign_flip_count,engine,protocol
+1,-0.25,20,0,-0.0008657151082180833,-0.0008789326699787658,-0.0008523678558058953,20,0,20,0,0,4,3,0,0,3,0,0,OUR-MAIN,static-20-split-fixed-sigma-stability
+1,0.0,20,0,0.0,0.0,0.0,20,0,0,20,0,1,0,0,0,0,0,0,OUR-MAIN,static-20-split-fixed-sigma-stability
+1,0.25,20,0,0.0008657151082180833,0.0008523678558058953,0.0008789326699787658,20,20,0,0,0,0,1,0,0,0,1,0,OUR-MAIN,static-20-split-fixed-sigma-stability
+2,-0.25,20,0,0.0009754671837228224,0.0009311620786923186,0.0010199183838314335,20,20,0,0,20,0,0,0,0,0,0,0,OUR-MAIN,static-20-split-fixed-sigma-stability
+2,0.0,20,0,0.0,0.0,0.0,20,0,0,20,20,0,0,0,0,0,0,0,OUR-MAIN,static-20-split-fixed-sigma-stability
+2,0.25,20,0,-0.0009754671837228224,-0.0010199183838314335,-0.0009311620786923186,20,0,20,0,19,0,1,0,1,0,0,0,OUR-MAIN,static-20-split-fixed-sigma-stability
+3,-0.25,20,0,0.00039680990914237046,0.0003889234993608937,0.00041185690724342415,20,20,0,0,20,20,0,0,0,0,0,0,OUR-MAIN,static-20-split-fixed-sigma-stability
+3,0.0,20,0,0.0,0.0,0.0,20,0,0,20,20,20,0,0,0,0,0,0,OUR-MAIN,static-20-split-fixed-sigma-stability
+3,0.25,20,0,-0.00039680990914237046,-0.00041185690724342415,-0.0003889234993608937,20,0,20,0,20,20,0,0,0,0,0,0,OUR-MAIN,static-20-split-fixed-sigma-stability
+4,-1.0,20,0,-0.0010189281667848278,-0.0012376182388246343,-0.0007591466410239916,20,0,20,0,10,11,1,0,0,1,0,1,OUR-MAIN,static-20-split-fixed-sigma-stability
+4,0.0,20,0,0.0,0.0,0.0,20,0,0,20,10,10,0,0,0,0,0,1,OUR-MAIN,static-20-split-fixed-sigma-stability
+4,1.0,20,0,0.0010189281667848278,0.0007591466410239916,0.0012376182388246346,20,20,0,0,11,10,1,1,0,0,0,1,OUR-MAIN,static-20-split-fixed-sigma-stability

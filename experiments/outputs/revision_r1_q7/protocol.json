@@ -1,0 +1,22 @@
+{
+  "source": "experiments\\outputs\\raw_results\\synthetic_membership_raw_v2.parquet",
+  "source_sha256": "2681cf8868ced1fb4f7f48baa172544ce9e3363e18ce43661fc9c04ca33dea2f",
+  "sigma": 1.0,
+  "delta": 0.5,
+  "kappa": 1.25,
+  "eta": 0.0,
+  "selection": "First configured kappa/eta seed group, fixed before inspection.",
+  "null": "Independent Uniform(0,1) coordinate draws; kappa/eta do not affect their law.",
+  "n_records": [
+    500,
+    2000,
+    10000
+  ],
+  "replications": 50,
+  "std_ddof": 1,
+  "quantiles": "linear empirical quantiles",
+  "sign_zero_tolerance": 1e-12,
+  "reconstructed_samples": 150,
+  "max_reconstruction_error": 0.0,
+  "max_identity_error": 7.860465750519907e-17
+}

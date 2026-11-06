@@ -1,0 +1,12 @@
+{
+  "searches": 210,
+  "matched_comparisons": 70,
+  "all_retained_sets_equal": true,
+  "diagnostic_passes": 42,
+  "diagnostics_counts_and_keys_equal": true,
+  "source_sha256": "b523500f63d86bc3f9e32a5aebce4dbc39969d6576516687c75b04d0bd9621f8",
+  "timing": "unchanged miner incl. output sorting; excludes preprocessing",
+  "memory": "lifetime worker peak through ordinary search; before diagnostics and serialization",
+  "profiling": "separate timer-instrumented pass at first seed; candidate timer covers consequent filtering, variable checks and prefix construction; other includes bookkeeping, output and instrumentation",
+  "execution": "fresh sequential processes; one BLAS thread; cyclic mode order"
+}

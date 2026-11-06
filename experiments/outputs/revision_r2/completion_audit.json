@@ -1,0 +1,67 @@
+{
+  "Q1_Q7_affine": {
+    "operators_per_dataset": 6,
+    "datasets": 6,
+    "coefficient_and_scalar_validation": {
+      "scalar_checks": 216,
+      "max_error": 2.220446049250313e-16,
+      "coefficients_verified_exactly": true,
+      "matched_gap_tolerance": 1e-12
+    }
+  },
+  "Q2_validation": {
+    "inner_candidate_evaluations": 450,
+    "outer_choices": 30,
+    "improved": 11,
+    "tied": 13,
+    "worse": 6,
+    "nonzero_choices": 23,
+    "all_outer_partitions_disjoint": true,
+    "all_choices_match_inner_objective": true
+  },
+  "Q3_multiitem": {
+    "exact_arithmetic_source": "30_reviewer2_analysis.py:examples",
+    "symmetric_gap": 0.04908,
+    "positive_delta_increment": -0.00022
+  },
+  "Q4_trajectory": {
+    "independent_trajectories": 100,
+    "label_pair_records": 900,
+    "max_saved_aggregate_error": 2.1385887852276575e-17,
+    "statistical_unit": "one complete trajectory",
+    "configuration": {
+      "true_lag": 1,
+      "evaluation_lag": 1,
+      "coupling": 0.5,
+      "noise": 0.1,
+      "mechanism": "linear",
+      "sigma": 1.0,
+      "delta": 0.5,
+      "label_count": 3
+    }
+  },
+  "Q8_computation": {
+    "searches": 210,
+    "matched_groups": 70,
+    "diagnostic_passes": 42,
+    "all_retained_keys_equal": true,
+    "all_exhaustive_counts_match_formula": true,
+    "original_miner_unchanged": true
+  },
+  "documents": {
+    "Reviewer2_responses_complete": 8,
+    "Reviewer2_locations_present": 8,
+    "all_reviewer_comments_preserved": true,
+    "Reviewer3_untouched": true,
+    "no_linelabels": true,
+    "main_and_supplement_compile": true,
+    "no_overfull_or_undefined": true,
+    "response_builtin_compiler": "success separately confirmed"
+  },
+  "Q5_Q6_discussion": {
+    "source": "main_submission.tex:Section VI",
+    "locations": "pp12-13 lines1030-1077",
+    "reference_added": "AslanAltanHacioglu2022",
+    "reference_decisions": "literature_decisions.json"
+  }
+}

@@ -1,0 +1,11 @@
+# Fixed before running repeated-split results. No tuning or example reselection.
+seeds: [20260903, 20260904, 20260905, 20260906, 20260907, 20260908, 20260909, 20260910, 20260911, 20260912, 20260913, 20260914, 20260915, 20260916, 20260917, 20260918, 20260919, 20260920, 20260921, 20260922]
+training_fraction: 0.7
+labels: 3
+sigma: 1.0
+deltas: [-0.5, 0.0, 0.5]
+thresholds: {coverage: 0.01, support: 0.01, confidence: 0.5}
+sign_zero_tolerance: 1.0e-12
+quantile_method: linear
+representatives: experiments/outputs/revision_r1_q3/representative_rules.csv
+# Track each Q3 example with its original partition, sigma, deltas and thresholds.
